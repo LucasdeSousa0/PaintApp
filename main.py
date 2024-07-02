@@ -1,5 +1,3 @@
-#Davi aqui
-
 from tkinter import *
 from tkinter import colorchooser, filedialog, messagebox
 import PIL.ImageGrab as ImageGrab
