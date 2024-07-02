@@ -184,6 +184,8 @@ class TextEntry:
         Entry(text_frame, textvariable=app.textValue, width=20).grid(row=1, column=0)
         Button(text_frame, text="Clear", width=20, command=lambda: app.textValue.set("")).grid(row=2, column=0)
 
+
+
 if __name__ == "__main__":
     app = PaintApp()
     app.run()
