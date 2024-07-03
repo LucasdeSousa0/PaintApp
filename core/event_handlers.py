@@ -10,9 +10,13 @@ class EventHandlers:
         self.app = app
 
     def bind_events(self, canvas):
-        canvas.bind("<B1-Motion>", self.app.state_manager.paint)
-        canvas.bind("<ButtonRelease-1>", self.app.state_manager.reset_point)
-        canvas.bind("<B3-Motion>", self.app.state_manager.paint_right)
-        canvas.bind("<Button-2>", self.app.state_manager.write_text)
+        event_actions = {
+            "<B1-Motion>": self.app.state_manager.paint,
+            "<ButtonRelease-1>": self.app.state_manager.reset_point,
+            "<B3-Motion>": self.app.state_manager.paint_right,
+            "<Button-2>": self.app.state_manager.write_text,
+        }
+        for event, action in event_actions.items():
+            canvas.bind(event, action)
 
     
