@@ -33,16 +33,15 @@ class PaintApp:
         frame = Frame(self.root, height=100, width=1100)
         frame.grid(row=0, column=0, sticky='nw')
 
-        Toolbar(frame, self)
-        SizeSelector(frame, self)
-        ColorPicker(frame, self)
-        ColorButtons(frame, self)
-        SaveAndClear(frame, self)
-        HelpMenu(frame, self)
-        TextEntry(frame, self)
+        self.init_ui(frame)
 
         self.event_handlers.bind_events(self.canvas)
         
+    def init_ui(self, frame):
+        """Initialize UI components."""
+        components = [Toolbar, SizeSelector, ColorPicker, ColorButtons, SaveAndClear, HelpMenu, TextEntry]
+        for component in components:
+            component(frame, self)
 
     def run(self):
         """Start the Tkinter event loop."""
