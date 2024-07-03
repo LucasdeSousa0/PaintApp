@@ -1,0 +1,2 @@
+tkinter==8.6.12  # Versão padrão que acompanha o Python 3.12
+Pillow==10.4.0
