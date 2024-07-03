@@ -8,7 +8,6 @@ class TextEntry:
         parent (Frame): The parent widget that houses the text entry component.
         app (PaintApp): Reference to the main application to access shared resources and methods.
     """
-     
     def __init__(self, parent, app):
         text_frame = Frame(parent, height=100, width=200, relief='sunken', borderwidth=3)
         text_frame.grid(row=0, column=6)

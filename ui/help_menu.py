@@ -8,7 +8,6 @@ class HelpMenu:
         parent (Frame): The parent widget that houses the help menu.
         app (PaintApp): Reference to the main application for triggering dialog displays.
     """
-
     def __init__(self, parent, app):
         help_setting_frame = Frame(parent, height=100, width=100, relief='sunken', borderwidth=3)
         help_setting_frame.grid(row=0, column=5)

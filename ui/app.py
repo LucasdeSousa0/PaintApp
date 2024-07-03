@@ -12,14 +12,11 @@ from core.event_handlers import EventHandlers
 from core.state_management import StateManager
 
 class PaintApp:
-
     """Main application class for the Paint App.
 
     This class initializes the main window and all UI components,
     binds events, and contains the main application logic.
     """
-
-
     def __init__(self, root):
         self.root = root
         self.root.title("Paint App")
@@ -33,23 +30,22 @@ class PaintApp:
         self.state_manager = StateManager(self.canvas)
         self.event_handlers = EventHandlers(self)
 
-        frame1 = Frame(self.root, height=100, width=1100)
-        frame1.grid(row=0, column=0, sticky='nw')
+        frame = Frame(self.root, height=100, width=1100)
+        frame.grid(row=0, column=0, sticky='nw')
 
-        Toolbar(frame1, self)
-        SizeSelector(frame1, self)
-        ColorPicker(frame1, self)
-        ColorButtons(frame1, self)
-        SaveAndClear(frame1, self)
-        HelpMenu(frame1, self)
-        TextEntry(frame1, self)
+        Toolbar(frame, self)
+        SizeSelector(frame, self)
+        ColorPicker(frame, self)
+        ColorButtons(frame, self)
+        SaveAndClear(frame, self)
+        HelpMenu(frame, self)
+        TextEntry(frame, self)
 
         self.event_handlers.bind_events(self.canvas)
         
 
     def run(self):
         """Start the Tkinter event loop."""
-
         self.root.mainloop()
 
     

@@ -7,7 +7,6 @@ class SizeSelector:
         parent (Frame): The parent widget that contains this size selector.
         app (PaintApp): Reference to the main application class.
     """
-
     def __init__(self, parent, app):
         """Initialize the size selector with options."""
 

@@ -9,7 +9,6 @@ class Toolbar:
         parent (Frame): The parent widget that contains this toolbar.
         app (PaintApp): Reference to the main application class.
     """
-
     def __init__(self, parent, app):
         """Initialize the Toolbar with a reference to the main app and its parent frame."""
 
