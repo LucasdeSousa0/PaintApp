@@ -17,16 +17,6 @@ class PaintApp:
 
     This class initializes the main window and all UI components,
     binds events, and contains the main application logic.
-
-    Attributes:
-        root (Tk): The main window of the application.
-        stroke_size (IntVar): Current size of the brush/pen.
-        stroke_color (StringVar): Current color of the brush/pen.
-        previousColor (StringVar): Previous color used.
-        previousColor2 (StringVar): Second last color used.
-        textValue (StringVar): Text value for text tool.
-        prevPoint (list): Previous point coordinates for drawing.
-        currentPoint (list): Current point coordinates for drawing.
     """
 
 
@@ -39,7 +29,7 @@ class PaintApp:
         self.canvas = Canvas(self.root, height=500, width=1100, bg="white")
         self.canvas.grid(row=1, column=0)
 
-        
+
         self.state_manager = StateManager(self.canvas)
         self.event_handlers = EventHandlers(self)
 

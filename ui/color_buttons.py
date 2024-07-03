@@ -1,6 +1,14 @@
 from tkinter import Frame, Button
 
 class ColorButtons:
+    """
+    Provides a set of buttons for quick color selection in the Paint App.
+
+    Attributes:
+        parent (Frame): The parent widget that houses the color buttons.
+        app (PaintApp): Reference to the main application to manage color state changes.
+    """
+
     def __init__(self, parent, app):
         colors_frame = Frame(parent, height=100, width=200, relief='sunken', borderwidth=3)
         colors_frame.grid(row=0, column=3)

@@ -1,6 +1,14 @@
 from tkinter import Frame, Button
 
 class SaveAndClear:
+    """ 
+    Provides buttons for saving the current canvas content, creating new canvases, and clearing the current canvas.
+
+    Attributes:
+        parent (Frame): The parent widget that houses the save and clear functionality.
+        app (PaintApp): Reference to the main application to control file operations and canvas management.
+    """
+
     def __init__(self, parent, app):
         save_image_frame = Frame(parent, height=100, width=100, relief='sunken', borderwidth=3)
         save_image_frame.grid(row=0, column=4)
