@@ -7,4 +7,4 @@ class ColorButtons:
 
         colors = ["Red", "Green", "Blue", "Yellow", "Orange", "Purple"]
         for i, color in enumerate(colors):
-            Button(colors_frame, text=color, bg=color.lower(), width=10, command=lambda c=color.lower(): app.stroke_color.set(c)).grid(row=i//2, column=i%2)
+            Button(colors_frame, text=color, bg=color.lower(), width=10, command=lambda c=color.lower(): app.state_manager.stroke_color.set(c)).grid(row=i//2, column=i%2)
