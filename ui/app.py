@@ -30,10 +30,10 @@ class PaintApp:
         self.state_manager = StateManager(self.canvas)
         self.event_handlers = EventHandlers(self)
 
-        frame = Frame(self.root, height=100, width=1100)
-        frame.grid(row=0, column=0, sticky='nw')
+        frame1 = Frame(self.root, height=100, width=1100) # initial frame
+        frame1.grid(row=0, column=0, sticky='nw')
 
-        self.init_ui(frame)
+        self.init_ui(frame1)
 
         self.event_handlers.bind_events(self.canvas)
         
