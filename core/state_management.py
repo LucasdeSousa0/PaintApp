@@ -57,10 +57,10 @@ class StateManager:
         self.prevPoint = [0, 0]
 
     def paint_right(self, event):
-        """Handle right mouse button drawing events (draw ovals)."""
+        """Handle right mouse button drawing events (draw arc)."""
 
         x, y = event.x, event.y
-        self.canvas.create_oval(x, y, x + self.stroke_size.get(), y + self.stroke_size.get(), fill=self.stroke_color.get(), outline=self.stroke_color.get())
+        self.canvas.create_arc(x, y, x + self.stroke_size.get(), y + self.stroke_size.get(), fill=self.stroke_color.get(), outline=self.stroke_color.get(), width=self.stroke_size.get())
 
     def write_text(self, event):
         """Create text on the canvas at the mouse event location."""
@@ -70,14 +70,21 @@ class StateManager:
     def save_image(self):
         """Save the current canvas content as an image file."""
 
-        file_location = filedialog.asksaveasfilename(defaultextension=".jpg")
-        if file_location:
-            x = self.root.winfo_rootx() + self.canvas.winfo_x()
-            y = self.root.winfo_rooty() + self.canvas.winfo_y()
-            img = ImageGrab.grab(bbox=(x, y, x + 1100, y + 500))
-            img.save(file_location)
-            if messagebox.askyesno("Paint App", "Do you want to open the image?"):
-                img.show()
+        try:
+
+            file_location = filedialog.asksaveasfilename(defaultextension=".jpg")
+            if file_location:
+                x = self.root.winfo_rootx() + self.canvas.winfo_x()
+                y = self.root.winfo_rooty() + self.canvas.winfo_y()
+                img = ImageGrab.grab(bbox=(x, y, x + 1100, y + 500))
+                img.save(file_location)
+                if messagebox.askyesno("Paint App", "Do you want to open the image?"):
+                    img.show()
+
+        except Exception as e:
+            messagebox.showinfo("Paint app: " , "Error occured")
+
+
 
     def clear(self):
         """Clear all drawings from the canvas."""
