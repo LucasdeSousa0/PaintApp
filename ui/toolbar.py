@@ -1,7 +1,16 @@
 from tkinter import Frame, Button, Label
 
 class Toolbar:
+    """Toolbar component containing drawing tools like pencil and eraser.
+
+    Attributes:
+        parent (Frame): The parent widget that contains this toolbar.
+        app (PaintApp): Reference to the main application class.
+    """
+    
     def __init__(self, parent, app):
+        """Initialize the Toolbar with a reference to the main app and its parent frame."""
+
         tools_frame = Frame(parent, height=100, width=100, relief='sunken', borderwidth=3)
         tools_frame.grid(row=0, column=0)
 

@@ -1,7 +1,16 @@
 from tkinter import Frame, Button, OptionMenu, Label
 
 class SizeSelector:
+    """Component for selecting the size of the brush/pen.
+
+    Attributes:
+        parent (Frame): The parent widget that contains this size selector.
+        app (PaintApp): Reference to the main application class.
+    """
+
     def __init__(self, parent, app):
+        """Initialize the size selector with options."""
+
         size_frame = Frame(parent, height=100, width=100, relief='sunken', borderwidth=3)
         size_frame.grid(row=0, column=1)
 
